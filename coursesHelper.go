@@ -3,11 +3,29 @@ package coursesHelper
 import (
 	"bytes"
 	"fmt"
+	"github.com/mbock573/httpClientHelper"
 	"golang.org/x/net/html"
+	"io"
 	"strings"
 )
 
-func CourseParser(htmlBody []byte) (map[string]string, error) {
+const moduledb_htwsaarURL = "moduledb.htwsaar.de"
+
+func Run() (map[string]string, error) {
+	client := httpClientHelper.NewClient()
+	httpResult, err := httpClientHelper.HttpGetRequest(client, moduledb_htwsaarURL)
+	if err != nil {
+		fmt.Printf("CoursesHelper Error: %v\n", err)
+	}
+	bodyBytes, err := io.ReadAll(httpResult.Body)
+	if err != nil {
+		fmt.Printf("CourseHelper Error: %v\n", err)
+	}
+	availableCourses, err := courseParser(bodyBytes)
+	return availableCourses, err
+}
+
+func courseParser(htmlBody []byte) (map[string]string, error) {
 	coursesMap := make(map[string]string)
 	doc, err := html.Parse(bytes.NewReader(htmlBody))
 	if err != nil {

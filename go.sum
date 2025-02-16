@@ -1,2 +1,4 @@
+github.com/mbock573/httpClientHelper v0.0.0-20250212134703-8da47659bb9a h1:vWEs3wO06+PVrS4xVyQu4JG9pH5xMkJ+OtmAbT1SZc0=
+github.com/mbock573/httpClientHelper v0.0.0-20250212134703-8da47659bb9a/go.mod h1:DsAqjVz1FWTmPkUaNgGSkn7BH76ufyj4lt/+Wk3Uvac=
 golang.org/x/net v0.35.0 h1:T5GQRQb2y08kTAByq9L4/bz8cipCdA8FbRTXewonqY8=
 golang.org/x/net v0.35.0/go.mod h1:EglIi67kWsHKlRzzVMUD93VMSWGFOMSZgxFjparz1Qk=
