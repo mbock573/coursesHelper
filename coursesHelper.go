@@ -9,7 +9,7 @@ import (
 	"strings"
 )
 
-const moduledb_htwsaarURL = "moduledb.htwsaar.de"
+const moduledb_htwsaarURL = "https://moduldb.htwsaar.de/"
 
 func Run() (map[string]string, error) {
 	client := httpClientHelper.NewClient()
